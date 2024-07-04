@@ -32,7 +32,7 @@ Route::get('/teacher/show/{id}', [TeacherController::class, 'show'])->name('teac
 
 Route::get('/teacher/create', [TeacherController::class, 'create'])->name('teacher.create');
 Route::get('/teacher/delete/{id}', [TeacherController::class, 'delete'])->name('teacher.delete');
-Route::post('/teacher/create', [TeacherController::class, 'save'])->name('student.save');
+Route::post('/teacher/create', [TeacherController::class, 'save'])->name('teacher.save');
 Route::get('/teacher/edit/{id}', [TeacherController::class, 'edit'])->name('teacher.edit');
 Route::post('/teacher/update/{id}', [TeacherController::class, 'update'])->name('teacher.update');
 
