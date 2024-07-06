@@ -9,8 +9,10 @@ class Student extends Model
 {
     protected $fillable = [
         'id',
-        'name',
-        'address',
+        'name_en',
+        'name_ar',
+        'address_en',
+        'address_ar',
         'mobile',
     ];
     use HasFactory;

@@ -28,8 +28,8 @@ class StudentController extends Controller
     {
         // Create a new student
         Student::create([
-            'name' => $request->name,
-            'address' => $request->address,
+            'name_en' => $request->name_en,
+            'address_en' => $request->address_en,
             'mobile' => $request->mobile,
         ]);
 
