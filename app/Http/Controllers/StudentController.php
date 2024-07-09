@@ -29,7 +29,9 @@ class StudentController extends Controller
         // Create a new student
         Student::create([
             'name_en' => $request->name_en,
+            'name_ar' => $request->name_ar,
             'address_en' => $request->address_en,
+            'address_ar' => $request->address_ar,
             'mobile' => $request->mobile,
         ]);
 
@@ -50,9 +52,11 @@ class StudentController extends Controller
     {
         Student::findOrFail($id)->update([
             "id" => $request->id,
-            "name" => $request->name,
-            "address" => $request->address,
-            "mobile" => $request->mobile,
+            'name_en' => $request->name_en,
+            'name_ar' => $request->name_ar,
+            'address_en' => $request->address_en,
+            'address_ar' => $request->address_ar,
+            'mobile' => $request->mobile,
         ]);
         return redirect()->route("student")->with("message", "Updated Successfully");
     }

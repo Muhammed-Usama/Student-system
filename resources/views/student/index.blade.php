@@ -32,8 +32,8 @@
                                 @foreach($students as $item)
                                     <tr>
                                         <td>{{ $item->id }}</td>
-                                        <td>{{ $item->name }}</td>
-                                        <td>{{ $item->address }}</td>
+                                        <td>{{ $item->name_en }}</td>
+                                        <td>{{ $item->address_en }}</td>
                                         <td>{{ $item->mobile }}</td>
 
                                         <td>
