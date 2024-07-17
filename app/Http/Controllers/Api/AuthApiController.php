@@ -31,7 +31,8 @@ class AuthApiController extends Controller
 
         return response()->json([
             'access_token' => $token,
-            'Data' => $user
+            'Data' => $user,
+
         ]);
     }
 }

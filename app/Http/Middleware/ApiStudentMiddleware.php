@@ -20,7 +20,7 @@ class ApiStudentMiddleware
             return $next($request);
         }
         return response()->json([
-            'msg' => 'you are auth'
+            'msg' => 'you are not auth'
         ], 401);
     }
 }
