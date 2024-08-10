@@ -1,23 +1,50 @@
-@extends('layouts.app')
-@section('content')
+@extends('admin.layout.layout')
+@section('contant')
+    <div class="content-wrapper">
+        <section class="content">
+            <div class="row">
+                <!-- left column -->
+                <div class="col-md-12">
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title">Add Student</h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <!-- form start -->
+                        <form action="{{ route('student.update', $students->id) }}" method="post">
+                            @csrf
+                            <div class="card-body">
+                                <input type="hidden" name="id" id="id" value="{{ $students->id }}"
+                                    id="id" />
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Name</label>
+                                    <input type="text" name="name_en" class="form-control" id="exampleInputPassword1"
+                                        placeholder="Enter Name" value="{{ $students->name_en }}">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Address</label>
+                                    <input type="text" name="address_en" class="form-control" id="exampleInputPassword1"
+                                        placeholder="ُEnter Address" value="{{ $students->address_en }}">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Mobile</label>
+                                    <input type="text" name="mobile" class="form-control" id="exampleInputPassword1"
+                                        placeholder="Enter Mobile" value="{{ $students->mobile }}">
+                                </div>
 
-<div class="card">
-  <div class="card-header">Contactus Page</div>
-  <div class="card-body">
+                            </div>
+                            <!-- /.card-body -->
 
-      <form action="{{route('student.update',$students->id)}}" method="post">
-        @csrf
-        <input type="hidden" name="id" id="id" value="{{$students->id}}" id="id" />
-        <label>Name</label></br>
-        <input type="text" name="name" id="name" value="{{$students->name}}" class="form-control"></br>
-        <label>Address</label></br>
-        <input type="text" name="address" id="address" value="{{$students->address}}" class="form-control"></br>
-        <label>Mobile</label></br>
-        <input type="text" name="mobile" id="mobile" value="{{$students->mobile}}" class="form-control"></br>
-        <input type="submit" value="Update" class="btn btn-success"></br>
-    </form>
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
 
-  </div>
-</div>
+
 
 @stop

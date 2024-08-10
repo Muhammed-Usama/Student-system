@@ -16,8 +16,8 @@ class TeacherController extends Controller
 
     public function show($id)
     {
-        $Teachers = Teacher::findOrFail($id);
-        return view('teacher.show', compact('Teachers'));
+        $teachers = Teacher::findOrFail($id);
+        return view('teacher.show', compact('teachers'));
 
     }
     public function create()
@@ -28,8 +28,10 @@ class TeacherController extends Controller
     {
         // Create a new Teacher
         Teacher::create([
-            'name' => $request->name,
-            'address' => $request->address,
+            'name_en' => $request->name_en,
+            'name_ar' => $request->name_ar,
+            'address_en' => $request->address_en,
+            'address_ar' => $request->address_ar,
             'mobile' => $request->mobile,
         ]);
 
@@ -43,8 +45,8 @@ class TeacherController extends Controller
     }
     public function edit($id)
     {
-        $Teachers = Teacher::findOrFail($id);
-        return view("teacher.edit", compact("Teachers"));
+        $teachers = Teacher::findOrFail($id);
+        return view("teacher.edit", compact("teachers"));
     }
     public function update(Request $request, $id)
     {
