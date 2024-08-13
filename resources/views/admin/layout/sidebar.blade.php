@@ -90,6 +90,24 @@
                                   <p>Show All Teachers</p>
                               </a>
                           </li>
+                          <li class="nav-item">
+                              <a href="{{ url('teacher/courses') }}" class="nav-link">
+                                  <i class="far fa-circle nav-icon"></i>
+                                  <p>Course</p>
+                              </a>
+                          </li>
+                          <li class="nav-item">
+                              <a href="{{ url('teacher/grades', '66bb6fc77dabfec47c084fe4') }}" class="nav-link">
+                                  <i class="far fa-circle nav-icon"></i>
+                                  <p>Grades</p>
+                              </a>
+                          </li>
+                          <li class="nav-item">
+                              <a href="{{ url('teacher/grades_teacher') }}" class="nav-link">
+                                  <i class="far fa-circle nav-icon"></i>
+                                  <p>Grades Teacher</p>
+                              </a>
+                          </li>
                       </ul>
                   </li>
 

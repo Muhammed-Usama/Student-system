@@ -39,6 +39,15 @@
                                 <li class="list-group-item">
                                     <b>Mobile</b> <a class="float-right">{{ $teachers->mobile }}</a>
                                 </li>
+                                <li class="list-group-item">
+                                    <b>Courses</b>
+                                    @foreach ($teachers->courses as $course)
+                                        <a class="float-right" href="{{ route('teacher-course.show', $course->name) }}">
+                                            {{ $course->name }}
+                                        </a>
+                                        <br>
+                                    @endforeach
+
                             </ul>
 
                             <a href="{{ url('teacher') }}" class="btn btn-primary btn-block"><b>Home</b></a>

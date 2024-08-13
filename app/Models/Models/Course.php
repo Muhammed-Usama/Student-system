@@ -2,16 +2,27 @@
 
 namespace App\Models\Models;
 
+use App\Models\Grade;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use MongoDB\Laravel\Eloquent\Model;
 
 class Course extends Model
 {
     protected $fillable = [
         'id',
         'name',
-        'address',
-        'mobile',
     ];
+    public function students()
+    {
+        return $this->belongsToMany(Student::class, 'course_student');
+    }
+    public function teachers()
+    {
+        return $this->belongsToMany(Teacher::class, 'teacher_course');
+    }
+    public function grades()
+    {
+        return $this->belongsToMany(Grade::class, 'grades');
+    }
     use HasFactory;
 }

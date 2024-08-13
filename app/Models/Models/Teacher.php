@@ -15,5 +15,13 @@ class Teacher extends Model
         'address_ar',
         'mobile',
     ];
+    public function students()
+    {
+        return $this->belongsToMany(Student::class, 'teacher_student');
+    }
+    public function courses()
+    {
+        return $this->belongsToMany(Course::class, 'teacher_course');
+    }
     use HasFactory;
 }

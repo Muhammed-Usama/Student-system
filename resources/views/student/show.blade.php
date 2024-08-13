@@ -39,6 +39,13 @@
                                 <li class="list-group-item">
                                     <b>Mobile</b> <a class="float-right">{{ $students->mobile }}</a>
                                 </li>
+                                <li class="list-group-item">
+                                    <b>Courses</b> <a class="float-right">
+                                        @foreach ($students->courses as $course)
+                                            {{ $course->name }}
+                                        @endforeach
+                                    </a>
+                                </li>
                             </ul>
 
                             <a href="{{ url('student/index') }}" class="btn btn-primary btn-block"><b>Home</b></a>

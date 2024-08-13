@@ -45,10 +45,17 @@ Route::prefix('/teacher')->namespace('App\Http\Controllers\Teacher')->group(func
     Route::get('show/{id}', [TeacherController::class, 'show'])->name('teacher.show');
 
     Route::get('create', [TeacherController::class, 'create'])->name('teacher.create');
+    Route::get('courses', [TeacherController::class, 'courses'])->name('teacher.courses');
+    Route::get('grades/{id}', [TeacherController::class, 'grades'])->name('teacher.grades');
+    Route::post('grade_continue', [TeacherController::class, 'grades_con'])->name('teacher.grade_continue');
+    Route::post('grades_save', [TeacherController::class, 'grades_save'])->name('teacher.grades_save');
     Route::get('delete/{id}', [TeacherController::class, 'delete'])->name('teacher.delete');
     Route::post('create', [TeacherController::class, 'save'])->name('teacher.save');
     Route::get('edit/{id}', [TeacherController::class, 'edit'])->name('teacher.edit');
     Route::post('update/{id}', [TeacherController::class, 'update'])->name('teacher.update');
+    Route::post('save_course', [TeacherController::class, 'save_course'])->name('teacher.save_course');
+    Route::get('show_course/{course}', [TeacherController::class, 'show_course'])->name('teacher-course.show');
+    Route::get('grades_teacher', [TeacherController::class, 'grades_teacher']);
 });
 
 //Crube operation of course

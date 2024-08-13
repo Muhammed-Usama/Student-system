@@ -11,38 +11,17 @@
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form action="{{ route('student.save') }}" method="post">
+                        <form action="{{ route('teacher.save_course') }}" method="post">
                             @csrf
                             <div class="card-body">
+
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Email address</label>
-                                    <input type="email" name="email" class="form-control" id="exampleInputEmail1"
-                                        placeholder="Enter email">
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputPassword1">Name</label>
-                                    <input type="text" name="name_en" class="form-control" id="exampleInputPassword1"
-                                        placeholder="Enter Name">
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputPassword1">الأسم</label>
-                                    <input type="text" name="name_ar" class="form-control" id="exampleInputPassword1"
-                                        placeholder="ادخل الاسم">
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputPassword1">العنوان</label>
-                                    <input type="text" name="address_ar"class="form-control" id="exampleInputPassword1"
-                                        placeholder="ادخل العنوان">
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputPassword1">Address</label>
-                                    <input type="text" name="address_en" class="form-control" id="exampleInputPassword1"
-                                        placeholder="ُEnter Address">
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputPassword1">Mobile</label>
-                                    <input type="text" name="mobile" class="form-control" id="exampleInputPassword1"
-                                        placeholder="Enter Mobile">
+                                    <label>Select Teacher</label>
+                                    <select class="form-control" name='teacher'>
+                                        @foreach ($teachers as $row)
+                                            <option>{{ $row['name_en'] }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                                 <div class="form-group">
                                     <label>Select Course</label>
@@ -71,6 +50,7 @@
             </div>
         </section>
     </div>
+
     <script>
         mobiscroll.setOptions({
             locale: mobiscroll

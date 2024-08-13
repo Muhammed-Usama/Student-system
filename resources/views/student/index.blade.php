@@ -54,21 +54,14 @@
                                                     <a href="{{ route('student.show', $item->id) }}"class="btn btn-success">
                                                         <i class="fa-solid fa-eye"></i>
                                                     </a>
-                                                </td>
-
-                                                <td>
                                                     <a href="{{ route('student.edit', $item->id) }}"
                                                         class="btn btn-primary">
                                                         <i class="fa-solid fa-pen-to-square"></i>
                                                     </a>
-                                                </td>
-
-                                                <td>
                                                     <a href="{{ route('student.delete', $item->id) }}"
                                                         class="btn btn-danger">
                                                         <i class="fa-solid fa-trash"></i>
                                                     </a>
-                                                </td>
                                             </tr>
                                         @endforeach
                                     </tbody>

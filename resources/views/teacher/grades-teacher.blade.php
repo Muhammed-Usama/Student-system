@@ -34,36 +34,25 @@
                                 <table id="example2" class="table table-bordered table-hover">
                                     <thead>
                                         <tr>
-                                            <th>ID</th>
                                             <th>Name</th>
-                                            <th>Address</th>
-                                            <th>Mobile</th>
-                                            <th>Actions</th>
+                                            <th>Course</th>
+                                            <th>AVG Grade</th>
                                         </tr>
                                     </thead>
 
                                     <tbody>
-                                        @foreach ($teacher as $item)
-                                            <tr>
-                                                <td>{{ $item->id }}</td>
-                                                <td>{{ $item->name_en }}</td>
-                                                <td>{{ $item->address_en }}</td>
-                                                <td>{{ $item->mobile }}</td>
-
-                                                <td>
-                                                    <a href="{{ route('teacher.show', $item->id) }}"class="btn btn-success">
-                                                        <i class="fa-solid fa-eye"></i>
-                                                    </a>
-                                                    <a href="{{ route('teacher.edit', $item->id) }}"
-                                                        class="btn btn-primary">
-                                                        <i class="fa-solid fa-pen-to-square"></i>
-                                                    </a>
-                                                    <a href="{{ route('teacher.delete', $item->id) }}"
-                                                        class="btn btn-danger">
-                                                        <i class="fa-solid fa-trash"></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
+                                        @foreach ($teachers as $teacher)
+                                            @foreach ($teacher->courses as $course)
+                                                @php
+                                                    // Calculate the average grade for the course
+                                                    $averageGrade = $course->grades->avg('grade');
+                                                @endphp
+                                                <tr>
+                                                    <td>{{ $teacher->name_en }}</td>
+                                                    <td>{{ $course->name }}</td>
+                                                    <td>{{ number_format($averageGrade, 2) }}</td>
+                                                </tr>
+                                            @endforeach
                                         @endforeach
                                     </tbody>
                                 </table>

@@ -36,32 +36,20 @@
                                         <tr>
                                             <th>ID</th>
                                             <th>Name</th>
-                                            <th>Address</th>
-                                            <th>Mobile</th>
-                                            <th>Actions</th>
+                                            <th>Grades</th>
                                         </tr>
                                     </thead>
 
                                     <tbody>
-                                        @foreach ($teacher as $item)
+                                        @foreach ($students as $item)
                                             <tr>
                                                 <td>{{ $item->id }}</td>
                                                 <td>{{ $item->name_en }}</td>
-                                                <td>{{ $item->address_en }}</td>
-                                                <td>{{ $item->mobile }}</td>
 
                                                 <td>
-                                                    <a href="{{ route('teacher.show', $item->id) }}"class="btn btn-success">
-                                                        <i class="fa-solid fa-eye"></i>
-                                                    </a>
-                                                    <a href="{{ route('teacher.edit', $item->id) }}"
-                                                        class="btn btn-primary">
-                                                        <i class="fa-solid fa-pen-to-square"></i>
-                                                    </a>
-                                                    <a href="{{ route('teacher.delete', $item->id) }}"
-                                                        class="btn btn-danger">
-                                                        <i class="fa-solid fa-trash"></i>
-                                                    </a>
+                                                    @foreach ($item->grades as $grade)
+                                                        {{ $grade->grade }}
+                                                    @endforeach
                                                 </td>
                                             </tr>
                                         @endforeach
